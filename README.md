@@ -37,7 +37,7 @@ That copies `app/` and `screenshots/` into `out/` and writes `out/dossier.json`.
 - `app/style.css` — the guide's own look.
 - `app/data/trophies.json` — the 55 trophies with official names, descriptions, grades, hidden flags, counts, roadmap stages, guides and sources.
 - `main.ts` — hands the entry in: copies `app/` and `screenshots/` to `/output` and writes `dossier.json`.
-- `screenshots/` — 3 screenshots of the app running (cover first by name).
+- `screenshots/` — 3 screenshots of the app running (cover first by name). The cover screenshot shows the guide's main view: platinum progress, the six-stage roadmap and the trophy checklist.
 - `serve.ts` — a tiny static server for local development.
 
 ## Sources
