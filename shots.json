@@ -1,5 +1,1 @@
-[
-  { "file": "1-checklist.jpg", "path": "/", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "2-silver.jpg", "path": "/", "grade": "silver", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "3-bronze.jpg", "path": "/", "grade": "bronze", "scroll": 1400, "viewport": { "width": 1280, "height": 800 } }
-]
+[{"file":"1-cover.jpg","note":"Checklist with the missable trophy's guide and sources open beside it","path":"/","scroll":820,"viewport":{"height":800,"width":1280}},{"file":"2-roadmap.jpg","note":"Platinum progress ring, six-stage roadmap and missable warning","path":"/","viewport":{"height":800,"width":1280}},{"file":"3-spoiler.jpg","kind":"story","note":"Spoiler setting on with the Story filter: hidden story trophies masked until earned","path":"/","scroll":1050,"spoiler":true,"viewport":{"height":800,"width":1280}}]

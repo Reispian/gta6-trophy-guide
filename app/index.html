@@ -3,23 +3,85 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTA VI trophy checklist</title>
+<title>Leonida Platinum Guide — GTA 6 Trophy Tracker</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23ffc857'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='bold' text-anchor='middle' fill='%230e1a24'%3EL%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>GTA VI trophy checklist</h1>
-  <p id="progress">0 of 55 earned</p>
+<header class="masthead">
+  <div>
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+    <h1>Leonida Platinum Guide</h1>
+    <p class="tagline">Every trophy, its guide and its sources — plus a tracker that remembers your progress. Works fully offline.</p>
+  </div>
+  <div class="platinum-card" id="platinumCard">
+    <div class="platinum-ring" id="platinumRing"><span id="platinumPct">0%</span></div>
+    <p class="platinum-label">to the Platinum</p>
+    <p class="platinum-name">Vice Got a Price!</p>
+    <p class="platinum-count" id="progressText">0 of 55 earned</p>
+    <div class="bar"><div class="bar-fill" id="progressBar"></div></div>
+  </div>
 </header>
-<div class="controls">
-  <label>Grade <select id="grade"><option value="all">All</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
-  <button id="export" type="button">Export progress</button>
-  <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
-</div>
-<table>
-  <thead><tr><th>Earned</th><th>Trophy</th><th>Grade</th><th>How to get it</th></tr></thead>
-  <tbody id="rows"></tbody>
-</table>
+
+<main>
+  <section class="roadmap" id="roadmap" aria-label="Roadmap to the platinum">
+    <h2>Roadmap to the Platinum</h2>
+    <p class="roadmap-note">About 200 hours, in six stages. Stage 1 first — the only trophy that can be missed lives there.</p>
+    <ol class="stages" id="stages"></ol>
+  </section>
+
+  <section class="missable-banner" id="missableBanner" aria-label="Missable trophy warning">
+    <strong>&#9888; 1 trophy can be missed.</strong>
+    <span>Positive Mental Attitude — meditate at Lucia&rsquo;s balcony spot in Chapter 1, before the chapter ends. There is no mission replay: keep a manual save at the start of every chapter.</span>
+  </section>
+
+  <section class="controls" aria-label="Tracker controls">
+    <div class="search-wrap">
+      <label for="search">Search trophies</label>
+      <input id="search" type="search" placeholder="Type a name, mission or keyword…" autocomplete="off">
+    </div>
+    <div class="filters" id="kindFilters" role="group" aria-label="Filter by kind">
+      <button type="button" data-kind="all" class="active">All 55</button>
+      <button type="button" data-kind="story">Story</button>
+      <button type="button" data-kind="missable">Missable</button>
+      <button type="button" data-kind="collectibles">Collectibles</button>
+      <button type="button" data-kind="activities">Activities</button>
+      <button type="button" data-kind="online">Online</button>
+    </div>
+    <div class="toggles">
+      <label class="toggle"><input type="checkbox" id="spoilerToggle"> <span>Hide story spoilers</span></label>
+      <label class="toggle"><input type="checkbox" id="earnedOnly"> <span>Earned only</span></label>
+      <label class="toggle"><input type="checkbox" id="todoOnly"> <span>To do only</span></label>
+      <label class="grade-label">Grade
+        <select id="gradeFilter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <button type="button" id="exportBtn">Export progress</button>
+      <label class="import-btn">Import progress <input id="importInput" type="file" accept="application/json,.json"></label>
+      <button type="button" id="resetBtn" class="quiet">Reset</button>
+    </div>
+    <p class="controls-note" id="resultCount"></p>
+  </section>
+
+  <section class="board" aria-label="Trophy tracker">
+    <ul class="trophy-list" id="trophyList"></ul>
+    <aside class="detail" id="detail" aria-label="Selected trophy guide">
+      <p class="detail-empty">Pick a trophy on the left to read its guide and sources.</p>
+    </aside>
+  </section>
+
+  <section class="about">
+    <h2>About this guide</h2>
+    <p>Names, descriptions and grades are the official PlayStation list as published by Exophase and PSNProfiles. Every guide is written in our own words for this entry and names its sources beside it — a guide with no source gets no credit for its details, so each one cites where its facts come from. There are no online trophies: all 55 are single-player and offline. No Rockstar logo, artwork or game screenshot is used anywhere in this guide; the look is our own.</p>
+    <p>Progress is saved in this browser only (localStorage). Export it to a file to keep a backup, and import it back any time.</p>
+  </section>
+</main>
+<footer><p>Leonida Platinum Guide — an unofficial fan guide. Grand Theft Auto and GTA are trademarks of Take-Two Interactive; this guide is not affiliated with or endorsed by Rockstar Games.</p></footer>
 <script type="module" src="app.js"></script>
 </body>
 </html>
